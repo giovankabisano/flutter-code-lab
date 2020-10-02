@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/second_page.dart';
 
-class LoginPage extends StatelessWidget {
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Main Page"),
+      ),
       body: Center(
         child: RaisedButton(
-          child: Text("LOGIN"),
-          onPressed: () {},
+          child: Text("Go to Second Page"),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return SecondPage();
+            }));
+          },
         ),
       ),
     );
